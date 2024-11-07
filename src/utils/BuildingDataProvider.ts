@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import billdingData from '../data/building.json';
 
 interface Floor {
   name: string;
@@ -10,16 +11,20 @@ interface Floor {
 
 const useBuildingData = () => {
   const [buildingData, setBuildingData] = useState<Floor[]>([]);
-
-  //FILL HERE LOGIC TO SET THE BUILDING DATA
-
+  const Data = billdingData as Floor[];
 
   const getFloorByIndex = (floorIndex:number): Floor |undefined =>
   {
-    //FILL HERE
+    return Data[floorIndex]
   }
+
   const getListOfActivities = ():string[]=>{
-    //FILL HERE
+    let activities:string[] = [];
+    buildingData.forEach((floor:Floor)=>{
+      activities.push(floor.activity);
+    })
+    activities = Array.from(new Set(activities));
+    return activities;
   }
   return {
     buildingData,
