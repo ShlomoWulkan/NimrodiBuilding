@@ -11,4 +11,5 @@ const useIsVerified = ({ activity, role, activities }: IuseActivityParams) => {
   const activityIndex = activities.indexOf(activity);
   return roleIndex >= activityIndex;
 };
+
 export default useIsVerified;

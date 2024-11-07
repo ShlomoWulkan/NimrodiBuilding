@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import bildingDataJson from '../data/building.json';
+
 interface Floor {
   name: string;
   soldiers: number;

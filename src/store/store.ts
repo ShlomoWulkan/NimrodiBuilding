@@ -2,7 +2,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import floorreducer from "./floorreducer";
 import Rolereducer from "./rolereducer";
 
-
 const store = configureStore({
     reducer: {
         floorAccess: floorreducer,
